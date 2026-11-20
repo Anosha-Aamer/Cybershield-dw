@@ -1,0 +1,42 @@
+category_code,category_name,attack_family
+Category 4,Keylogger,Malicious Code
+Category 7,Email Spoofing,Social Engineering
+Category 8,Unpatched System,Vulnerability
+Category 9,Vulnerability Report,Vulnerability
+Category 13,Port Scanning,Reconnaissance
+Category 15,Third-Party Breach,Data Breach
+Category 17,Misconfiguration,Vulnerability
+Category 19,DDoS Attack,Network / Web Attack
+Category 20,Ransomware,Malicious Code
+Category 22,Worm Propagation,Malicious Code
+Category 23,Lost or Stolen Device,Physical Security
+Category 24,Web Application Attack,Network / Web Attack
+Category 25,Credential Stuffing,Access Violation
+Category 26,Phishing Email,Social Engineering
+Category 28,SQL Injection,Network / Web Attack
+Category 30,Cryptojacking,Malicious Code
+Category 31,Shadow IT Usage,Insider / Policy
+Category 32,Spam / Scam Message,Social Engineering
+Category 34,Privilege Escalation,Access Violation
+Category 35,Cross-Site Scripting,Network / Web Attack
+Category 36,Social Media Impersonation,Social Engineering
+Category 37,Policy Violation,Insider / Policy
+Category 38,USB Malware,Malicious Code
+Category 40,Password Reset Abuse,Access Violation
+Category 41,Rogue Access Point,Network / Web Attack
+Category 42,Unauthorized Access,Access Violation
+Category 43,Adware / PUP,Malicious Code
+Category 44,Insider Threat,Insider / Policy
+Category 45,Account Compromise,Access Violation
+Category 46,Suspicious Login,Access Violation
+Category 47,Business Email Compromise,Social Engineering
+Category 49,Zero-Day Exploit,Vulnerability
+Category 51,Trojan / Backdoor,Malicious Code
+Category 53,Malware Infection,Malicious Code
+Category 54,Man-in-the-Middle,Network / Web Attack
+Category 55,Spear Phishing,Social Engineering
+Category 56,DNS Hijacking,Network / Web Attack
+Category 57,Brute Force Attack,Access Violation
+Category 61,Data Leakage,Data Breach
+Category 62,Physical Intrusion,Physical Security
+Category 63,Data Exfiltration,Data Breach

@@ -1,0 +1,8 @@
+.env
+__pycache__/
+*.pyc
+# large generated data - rebuild with the generator scripts
+data/generated/
+data/silver/*.csv
+data/source/events_*.csv
+backups/

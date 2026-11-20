@@ -1,0 +1,442 @@
+batch,issue_type,column_name,rows_affected,example_before,example_after,cleaning_rule
+2016-03,duplicate_row,(all),501,INC1001829,row sent twice,"keep one row per (number, sys_mod_count, sys_updated_at)"
+2016-03,inconsistent_case_spacing,number,169,INC1001735, INC1001735,TRIM + UPPER
+2016-03,inconsistent_case_spacing,location,1017,Location 161,Location161,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-03,inconsistent_case_spacing,category,1017,Category 61, category 61 ,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-03,inconsistent_case_spacing,subcategory,1017,Subcategory 135, subcategory 135 ,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-03,inconsistent_case_spacing,assignment_group,1017,Group 70, group 70 ,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-03,inconsistent_case_spacing,contact_type,1017,Phone,PHONE ,TRIM + Title case
+2016-03,inconsistent_case_spacing,incident_state,678,Active,Active ,TRIM + map to standard state name
+2016-03,null_token_variant,location,20,?,-,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-03,null_token_variant,category,10,?,-,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-03,null_token_variant,subcategory,46,?,-,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-03,null_token_variant,assignment_group,2753,?,?,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-03,null_token_variant,caller_id,7,?,NULL,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-03,null_token_variant,resolved_at,302,?,null,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-03,null_token_variant,u_symptom,4704,?,NULL,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-03,missing_value,location,135,Location 204,?,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-03,missing_value,category,102,Category 9,N/A,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-03,missing_value,priority,68,3 - Moderate,,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-03,missing_value,assignment_group,153,Group 6,,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-03,mixed_date_format,opened_at,2711,2/3/2016 13:48,2016-03-02 13:48:00,parse all known formats -> TIMESTAMP
+2016-03,mixed_date_format,sys_updated_at,2711,15/3/2016 09:03,15-Mar-2016 09:03,parse all known formats -> TIMESTAMP
+2016-03,mixed_date_format,resolved_at,2682,18/3/2016 16:58,2016/03/18 16:58,parse all known formats -> TIMESTAMP
+2016-03,mixed_date_format,closed_at,2711,24/3/2016 19:01,2016-03-24 19:01:00,parse all known formats -> TIMESTAMP
+2016-03,invalid_date,sys_updated_at,17,23/3/2016 19:34,##/##/####,unparseable event time -> reject row to etl_reject_log
+2016-03,future_date,sys_updated_at,10,9/3/2016 13:24,9/3/2030 13:24,event time after load date -> reject row
+2016-03,inconsistent_code_format,priority,1694,3 - Moderate,MODERATE,map to '<n> - <Name>' using lookup
+2016-03,inconsistent_code_format,impact,1694,2 - Medium,2,map to '<n> - <Name>' using lookup
+2016-03,inconsistent_code_format,urgency,1694,2 - Medium,Medium,map to '<n> - <Name>' using lookup
+2016-03,inconsistent_boolean,active,3388,TRUE,true,map to BOOLEAN
+2016-03,inconsistent_boolean,made_sla,3388,TRUE,True,map to BOOLEAN
+2016-03,inconsistent_boolean,knowledge,3388,FALSE,False,map to BOOLEAN
+2016-03,inconsistent_boolean,u_priority_confirmation,3388,TRUE,True,map to BOOLEAN
+2016-03,negative_count,reassignment_count,183,2,-2,negative count (sign error) -> ABS()
+2016-03,resolved_before_opened,resolved_at,101,14/3/2016 08:18,1/1/2015 00:00,resolved_at < opened_at -> NULL + flag
+2016-03,numeric_as_text,sys_mod_count,102,4,4.0,cast text -> INT
+2016-03,orphan_code,location,34,Location 42,Location 999,not in location_map -> Unknown member (-1)
+2016-03,orphan_code,category,34,Category 45,Category 88,not in category_map -> Unknown member (-1)
+2016-04,duplicate_row,(all),567,INC1009251,row sent twice,"keep one row per (number, sys_mod_count, sys_updated_at)"
+2016-04,inconsistent_case_spacing,number,192,INC1005255, INC1005255,TRIM + UPPER
+2016-04,inconsistent_case_spacing,location,1151,Location 204,LOCATION 204,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-04,inconsistent_case_spacing,category,1151,Category 42,CATEGORY 42,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-04,inconsistent_case_spacing,subcategory,1151,Subcategory 174,Subcategory174,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-04,inconsistent_case_spacing,assignment_group,1151,Group 65,Group65,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-04,inconsistent_case_spacing,contact_type,1151,Phone,PHONE ,TRIM + Title case
+2016-04,inconsistent_case_spacing,incident_state,767,Awaiting User Info,Awaiting User Info ,TRIM + map to standard state name
+2016-04,null_token_variant,location,20,?,-,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-04,null_token_variant,category,11,?,null,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-04,null_token_variant,subcategory,40,?,-,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-04,null_token_variant,assignment_group,3182,?,null,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-04,null_token_variant,caller_id,14,?,,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-04,null_token_variant,resolved_at,296,?,,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-04,null_token_variant,u_symptom,5416,?,null,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-04,missing_value,location,153,Location 143,NULL,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-04,missing_value,category,115,Category 53,,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-04,missing_value,priority,77,3 - Moderate,?,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-04,missing_value,assignment_group,173,Group 70,null,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-04,mixed_date_format,opened_at,3070,30/3/2016 16:22,2016-03-30 16:22:00,parse all known formats -> TIMESTAMP
+2016-04,mixed_date_format,sys_updated_at,3070,14/4/2016 16:31,14-Apr-2016 16:31,parse all known formats -> TIMESTAMP
+2016-04,mixed_date_format,resolved_at,3042,21/4/2016 12:14,2016/04/21 12:14,parse all known formats -> TIMESTAMP
+2016-04,mixed_date_format,closed_at,3070,28/4/2016 19:00,2016-04-28 19:00:00,parse all known formats -> TIMESTAMP
+2016-04,invalid_date,sys_updated_at,19,15/4/2016 10:00,##/##/####,unparseable event time -> reject row to etl_reject_log
+2016-04,future_date,sys_updated_at,12,7/4/2016 11:18,7/4/2030 11:18,event time after load date -> reject row
+2016-04,inconsistent_code_format,priority,1919,1 - Critical,Critical,map to '<n> - <Name>' using lookup
+2016-04,inconsistent_code_format,impact,1919,2 - Medium,MEDIUM,map to '<n> - <Name>' using lookup
+2016-04,inconsistent_code_format,urgency,1919,2 - Medium,MEDIUM,map to '<n> - <Name>' using lookup
+2016-04,inconsistent_boolean,active,3837,TRUE,Yes,map to BOOLEAN
+2016-04,inconsistent_boolean,made_sla,3837,TRUE,Y,map to BOOLEAN
+2016-04,inconsistent_boolean,knowledge,3837,TRUE,Y,map to BOOLEAN
+2016-04,inconsistent_boolean,u_priority_confirmation,3837,FALSE,N,map to BOOLEAN
+2016-04,negative_count,reassignment_count,226,3,-3,negative count (sign error) -> ABS()
+2016-04,resolved_before_opened,resolved_at,114,28/4/2016 16:35,1/1/2015 00:00,resolved_at < opened_at -> NULL + flag
+2016-04,numeric_as_text,sys_mod_count,115,7,7.0,cast text -> INT
+2016-04,orphan_code,location,38,Location 204,Location 999,not in location_map -> Unknown member (-1)
+2016-04,orphan_code,category,38,Category 42,Category 88,not in category_map -> Unknown member (-1)
+2016-05,duplicate_row,(all),627,INC1013811,row sent twice,"keep one row per (number, sys_mod_count, sys_updated_at)"
+2016-05,inconsistent_case_spacing,number,212,INC1012126,INC1012126 ,TRIM + UPPER
+2016-05,inconsistent_case_spacing,location,1274,Location 108, location 108 ,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-05,inconsistent_case_spacing,category,1274,Category 37,CATEGORY 37,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-05,inconsistent_case_spacing,subcategory,1274,Subcategory 175,Subcategory175,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-05,inconsistent_case_spacing,assignment_group,1274,?,?,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-05,inconsistent_case_spacing,contact_type,1274,Email,EMAIL ,TRIM + Title case
+2016-05,inconsistent_case_spacing,incident_state,849,Active,ACTIVE,TRIM + map to standard state name
+2016-05,null_token_variant,location,22,?,,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-05,null_token_variant,category,28,?,?,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-05,null_token_variant,subcategory,48,?,N/A,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-05,null_token_variant,assignment_group,3384,?,null,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-05,null_token_variant,resolved_at,326,?,null,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-05,null_token_variant,u_symptom,6153,?,NULL,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-05,missing_value,location,170,Location 108,NULL,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-05,missing_value,category,127,Category 42,?,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-05,missing_value,priority,85,3 - Moderate,-,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-05,missing_value,assignment_group,192,Group 29,-,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-05,mixed_date_format,opened_at,3397,25/5/2016 12:21,2016-05-25 12:21:00,parse all known formats -> TIMESTAMP
+2016-05,mixed_date_format,sys_updated_at,3397,18/5/2016 15:57,18-May-2016 15:57,parse all known formats -> TIMESTAMP
+2016-05,mixed_date_format,resolved_at,3366,4/5/2016 19:37,2016/05/04 19:37,parse all known formats -> TIMESTAMP
+2016-05,mixed_date_format,closed_at,3397,9/5/2016 14:00,2016-05-09 14:00:00,parse all known formats -> TIMESTAMP
+2016-05,invalid_date,sys_updated_at,21,6/5/2016 13:40,##/##/####,unparseable event time -> reject row to etl_reject_log
+2016-05,future_date,sys_updated_at,13,2/5/2016 15:59,2/5/2030 15:59,event time after load date -> reject row
+2016-05,inconsistent_code_format,priority,2123,3 - Moderate,Moderate,map to '<n> - <Name>' using lookup
+2016-05,inconsistent_code_format,impact,2123,2 - Medium,2-medium,map to '<n> - <Name>' using lookup
+2016-05,inconsistent_code_format,urgency,2123,2 - Medium,MEDIUM,map to '<n> - <Name>' using lookup
+2016-05,inconsistent_boolean,active,4246,TRUE,Y,map to BOOLEAN
+2016-05,inconsistent_boolean,made_sla,4246,TRUE,True,map to BOOLEAN
+2016-05,inconsistent_boolean,knowledge,4246,FALSE,N,map to BOOLEAN
+2016-05,inconsistent_boolean,u_priority_confirmation,4246,FALSE,No,map to BOOLEAN
+2016-05,negative_count,reassignment_count,245,3,-3,negative count (sign error) -> ABS()
+2016-05,resolved_before_opened,resolved_at,126,11/5/2016 10:29,1/1/2015 00:00,resolved_at < opened_at -> NULL + flag
+2016-05,numeric_as_text,sys_mod_count,127,1,1.0,cast text -> INT
+2016-05,orphan_code,location,42,Location 93,Location 999,not in location_map -> Unknown member (-1)
+2016-05,orphan_code,category,42,Category 46,Category 88,not in category_map -> Unknown member (-1)
+2016-06,duplicate_row,(all),703,INC1021407,row sent twice,"keep one row per (number, sys_mod_count, sys_updated_at)"
+2016-06,inconsistent_case_spacing,number,238,INC1018337, INC1018337,TRIM + UPPER
+2016-06,inconsistent_case_spacing,location,1427,Location 108,LOCATION 108,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-06,inconsistent_case_spacing,category,1427,Category 26,Category  26 ,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-06,inconsistent_case_spacing,subcategory,1427,Subcategory 175,Subcategory  175 ,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-06,inconsistent_case_spacing,assignment_group,1427,Group 70,Group70,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-06,inconsistent_case_spacing,contact_type,1427,Phone,phone,TRIM + Title case
+2016-06,inconsistent_case_spacing,incident_state,951,Resolved,RESOLVED,TRIM + map to standard state name
+2016-06,null_token_variant,location,30,?,?,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-06,null_token_variant,category,28,?,NULL,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-06,null_token_variant,subcategory,54,?,N/A,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-06,null_token_variant,assignment_group,3775,?,null,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-06,null_token_variant,caller_id,4,?,N/A,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-06,null_token_variant,resolved_at,388,?,-,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-06,null_token_variant,u_symptom,6870,?,NULL,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-06,missing_value,location,190,Location 204,null,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-06,missing_value,category,143,Category 51,,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-06,missing_value,priority,95,3 - Moderate,N/A,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-06,missing_value,assignment_group,216,Group 28,N/A,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-06,mixed_date_format,opened_at,3804,6/6/2016 12:58,2016-06-06 12:58:00,parse all known formats -> TIMESTAMP
+2016-06,mixed_date_format,sys_updated_at,3804,22/6/2016 11:19,22-Jun-2016 11:19,parse all known formats -> TIMESTAMP
+2016-06,mixed_date_format,resolved_at,3768,15/6/2016 00:47,2016/06/15 00:47,parse all known formats -> TIMESTAMP
+2016-06,mixed_date_format,closed_at,3804,30/6/2016 18:40,2016-06-30 18:40:00,parse all known formats -> TIMESTAMP
+2016-06,invalid_date,sys_updated_at,24,14/6/2016 20:08,##/##/####,unparseable event time -> reject row to etl_reject_log
+2016-06,future_date,sys_updated_at,14,2/6/2016 16:49,2/6/2030 16:49,event time after load date -> reject row
+2016-06,inconsistent_code_format,priority,2378,3 - Moderate,P3,map to '<n> - <Name>' using lookup
+2016-06,inconsistent_code_format,impact,2378,2 - Medium,P2,map to '<n> - <Name>' using lookup
+2016-06,inconsistent_code_format,urgency,2378,2 - Medium,2,map to '<n> - <Name>' using lookup
+2016-06,inconsistent_boolean,active,4755,TRUE,Y,map to BOOLEAN
+2016-06,inconsistent_boolean,made_sla,4755,TRUE,Y,map to BOOLEAN
+2016-06,inconsistent_boolean,knowledge,4755,FALSE,0,map to BOOLEAN
+2016-06,inconsistent_boolean,u_priority_confirmation,4755,FALSE,false,map to BOOLEAN
+2016-06,negative_count,reassignment_count,279,3,-3,negative count (sign error) -> ABS()
+2016-06,resolved_before_opened,resolved_at,141,16/6/2016 09:54,1/1/2015 00:00,resolved_at < opened_at -> NULL + flag
+2016-06,numeric_as_text,sys_mod_count,143,3,3.0,cast text -> INT
+2016-06,orphan_code,location,48,Location 92,Location 999,not in location_map -> Unknown member (-1)
+2016-06,orphan_code,category,48,Category 40,Category 88,not in category_map -> Unknown member (-1)
+2016-07,duplicate_row,(all),686,INC1026217,row sent twice,"keep one row per (number, sys_mod_count, sys_updated_at)"
+2016-07,inconsistent_case_spacing,number,232,INC1029484,inc1029484,TRIM + UPPER
+2016-07,inconsistent_case_spacing,location,1392,Location 46,Location  46 ,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-07,inconsistent_case_spacing,category,1392,Category 37, category 37 ,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-07,inconsistent_case_spacing,subcategory,1392,Subcategory 164, subcategory 164 ,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-07,inconsistent_case_spacing,assignment_group,1392,Group 39,GROUP 39,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-07,inconsistent_case_spacing,contact_type,1392,Phone,phone,TRIM + Title case
+2016-07,inconsistent_case_spacing,incident_state,928,Active,active,TRIM + map to standard state name
+2016-07,null_token_variant,location,29,?,,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-07,null_token_variant,category,22,?,-,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-07,null_token_variant,subcategory,66,?,-,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-07,null_token_variant,assignment_group,3635,?,N/A,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-07,null_token_variant,caller_id,14,?,,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-07,null_token_variant,resolved_at,390,?,?,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-07,null_token_variant,u_symptom,6586,?,,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-07,missing_value,location,185,Location 8,NULL,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-07,missing_value,category,139,Category 57,-,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-07,missing_value,priority,93,3 - Moderate,-,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-07,missing_value,assignment_group,211,Group 70,N/A,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-07,mixed_date_format,opened_at,3711,26/7/2016 11:00,2016-07-26 11:00:00,parse all known formats -> TIMESTAMP
+2016-07,mixed_date_format,sys_updated_at,3711,12/7/2016 01:13,12-Jul-2016 01:13,parse all known formats -> TIMESTAMP
+2016-07,mixed_date_format,resolved_at,3674,9/8/2016 16:51,2016/08/09 16:51,parse all known formats -> TIMESTAMP
+2016-07,mixed_date_format,closed_at,3711,9/7/2016 14:07,2016-07-09 14:07:00,parse all known formats -> TIMESTAMP
+2016-07,invalid_date,sys_updated_at,23,7/7/2016 19:02,31/2/2016 10:00,unparseable event time -> reject row to etl_reject_log
+2016-07,future_date,sys_updated_at,14,18/7/2016 11:11,18/7/2030 11:11,event time after load date -> reject row
+2016-07,inconsistent_code_format,priority,2319,3 - Moderate,3,map to '<n> - <Name>' using lookup
+2016-07,inconsistent_code_format,impact,2319,2 - Medium,MEDIUM,map to '<n> - <Name>' using lookup
+2016-07,inconsistent_code_format,urgency,2319,2 - Medium,MEDIUM,map to '<n> - <Name>' using lookup
+2016-07,inconsistent_boolean,active,4639,TRUE,Y,map to BOOLEAN
+2016-07,inconsistent_boolean,made_sla,4639,TRUE,Yes,map to BOOLEAN
+2016-07,inconsistent_boolean,knowledge,4639,TRUE,Y,map to BOOLEAN
+2016-07,inconsistent_boolean,u_priority_confirmation,4639,FALSE,0,map to BOOLEAN
+2016-07,negative_count,reassignment_count,270,1,-1,negative count (sign error) -> ABS()
+2016-07,resolved_before_opened,resolved_at,138,15/7/2016 15:36,1/1/2015 00:00,resolved_at < opened_at -> NULL + flag
+2016-07,numeric_as_text,sys_mod_count,139,2,2.0,cast text -> INT
+2016-07,orphan_code,location,46,Location 51,Location 999,not in location_map -> Unknown member (-1)
+2016-07,orphan_code,category,46,Category 53,Category 88,not in category_map -> Unknown member (-1)
+2016-08,duplicate_row,(all),673,INC1037169,row sent twice,"keep one row per (number, sys_mod_count, sys_updated_at)"
+2016-08,inconsistent_case_spacing,number,228,INC1034315,INC1034315 ,TRIM + UPPER
+2016-08,inconsistent_case_spacing,location,1366,Location 108,Location  108 ,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-08,inconsistent_case_spacing,category,1366,Category 26,Category  26 ,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-08,inconsistent_case_spacing,subcategory,1366,Subcategory 43, subcategory 43 ,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-08,inconsistent_case_spacing,assignment_group,1366,Group 70, group 70 ,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-08,inconsistent_case_spacing,contact_type,1366,Phone,PHONE ,TRIM + Title case
+2016-08,inconsistent_case_spacing,incident_state,910,Closed,CLOSED,TRIM + map to standard state name
+2016-08,null_token_variant,location,26,?,N/A,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-08,null_token_variant,category,26,?,null,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-08,null_token_variant,subcategory,62,?,null,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-08,null_token_variant,assignment_group,3688,?,N/A,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-08,null_token_variant,caller_id,7,?,,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-08,null_token_variant,resolved_at,344,?,NULL,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-08,null_token_variant,u_symptom,6546,?,,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-08,missing_value,location,182,Location 245,NULL,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-08,missing_value,category,136,Category 42,?,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-08,missing_value,priority,91,3 - Moderate,,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-08,missing_value,assignment_group,206,Group 25,null,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-08,mixed_date_format,opened_at,3642,22/7/2016 12:45,2016-07-22 12:45:00,parse all known formats -> TIMESTAMP
+2016-08,mixed_date_format,sys_updated_at,3642,16/8/2016 06:58,16-Aug-2016 06:58,parse all known formats -> TIMESTAMP
+2016-08,mixed_date_format,resolved_at,3610,6/9/2016 16:11,2016/09/06 16:11,parse all known formats -> TIMESTAMP
+2016-08,mixed_date_format,closed_at,3642,20/8/2016 06:59,2016-08-20 06:59:00,parse all known formats -> TIMESTAMP
+2016-08,invalid_date,sys_updated_at,23,25/8/2016 18:50,0/13/2016 25:61,unparseable event time -> reject row to etl_reject_log
+2016-08,future_date,sys_updated_at,14,04-Aug-2016 17:05,04-Aug-2030 17:05,event time after load date -> reject row
+2016-08,inconsistent_code_format,priority,2276,4 - Low,Low,map to '<n> - <Name>' using lookup
+2016-08,inconsistent_code_format,impact,2276,2 - Medium,Medium,map to '<n> - <Name>' using lookup
+2016-08,inconsistent_code_format,urgency,2276,2 - Medium,MEDIUM,map to '<n> - <Name>' using lookup
+2016-08,inconsistent_boolean,active,4552,TRUE,Y,map to BOOLEAN
+2016-08,inconsistent_boolean,made_sla,4552,TRUE,true,map to BOOLEAN
+2016-08,inconsistent_boolean,knowledge,4552,TRUE,true,map to BOOLEAN
+2016-08,inconsistent_boolean,u_priority_confirmation,4552,FALSE,false,map to BOOLEAN
+2016-08,negative_count,reassignment_count,268,1,-1,negative count (sign error) -> ABS()
+2016-08,resolved_before_opened,resolved_at,135,1/8/2016 09:16,1/1/2015 00:00,resolved_at < opened_at -> NULL + flag
+2016-08,numeric_as_text,sys_mod_count,137,0,0.0,cast text -> INT
+2016-08,orphan_code,location,46,Location 204,Location 999,not in location_map -> Unknown member (-1)
+2016-08,orphan_code,category,46,Category 61,Category 88,not in category_map -> Unknown member (-1)
+2016-09,duplicate_row,(all),657,INC1040972,row sent twice,"keep one row per (number, sys_mod_count, sys_updated_at)"
+2016-09,inconsistent_case_spacing,number,222,INC1041754,INC1041754 ,TRIM + UPPER
+2016-09,inconsistent_case_spacing,location,1334,Location 108,Location  108 ,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-09,inconsistent_case_spacing,category,1334,Category 32, category 32 ,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-09,inconsistent_case_spacing,subcategory,1334,Subcategory 114, subcategory 114 ,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-09,inconsistent_case_spacing,assignment_group,1334,Group 43,Group  43 ,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-09,inconsistent_case_spacing,contact_type,1334,Phone, Phone,TRIM + Title case
+2016-09,inconsistent_case_spacing,incident_state,889,Resolved,resolved,TRIM + map to standard state name
+2016-09,null_token_variant,location,30,?,-,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-09,null_token_variant,category,26,?,?,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-09,null_token_variant,subcategory,56,?,null,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-09,null_token_variant,assignment_group,3614,?,,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-09,null_token_variant,caller_id,7,?,NULL,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-09,null_token_variant,resolved_at,354,?,?,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-09,null_token_variant,u_symptom,6400,?,null,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-09,missing_value,location,178,Location 204,NULL,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-09,missing_value,category,133,Category 37,?,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-09,missing_value,priority,89,3 - Moderate,null,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-09,missing_value,assignment_group,201,Group 20,,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-09,mixed_date_format,opened_at,3557,9/9/2016 07:07,2016-09-09 07:07:00,parse all known formats -> TIMESTAMP
+2016-09,mixed_date_format,sys_updated_at,3557,28/9/2016 14:00,28-Sep-2016 14:00,parse all known formats -> TIMESTAMP
+2016-09,mixed_date_format,resolved_at,3524,13/9/2016 12:18,2016/09/13 12:18,parse all known formats -> TIMESTAMP
+2016-09,mixed_date_format,closed_at,3557,16/9/2016 12:13,2016-09-16 12:13:00,parse all known formats -> TIMESTAMP
+2016-09,invalid_date,sys_updated_at,22,20/9/2016 13:46,31/2/2016 10:00,unparseable event time -> reject row to etl_reject_log
+2016-09,future_date,sys_updated_at,13,27/9/2016 11:13,27/9/2030 11:13,event time after load date -> reject row
+2016-09,inconsistent_code_format,priority,2223,3 - Moderate,3-moderate,map to '<n> - <Name>' using lookup
+2016-09,inconsistent_code_format,impact,2223,2 - Medium,P2,map to '<n> - <Name>' using lookup
+2016-09,inconsistent_code_format,urgency,2223,2 - Medium,P2,map to '<n> - <Name>' using lookup
+2016-09,inconsistent_boolean,active,4446,TRUE,true,map to BOOLEAN
+2016-09,inconsistent_boolean,made_sla,4446,TRUE,Y,map to BOOLEAN
+2016-09,inconsistent_boolean,knowledge,4446,FALSE,0,map to BOOLEAN
+2016-09,inconsistent_boolean,u_priority_confirmation,4446,FALSE,False,map to BOOLEAN
+2016-09,negative_count,reassignment_count,258,1,-1,negative count (sign error) -> ABS()
+2016-09,resolved_before_opened,resolved_at,132,2016/09/27 12:11,1/1/2015 00:00,resolved_at < opened_at -> NULL + flag
+2016-09,numeric_as_text,sys_mod_count,133,2,2.0,cast text -> INT
+2016-09,orphan_code,location,44,Location 179,Location 999,not in location_map -> Unknown member (-1)
+2016-09,orphan_code,category,44,Category 22,Category 88,not in category_map -> Unknown member (-1)
+2016-10,duplicate_row,(all),656,INC1042278,row sent twice,"keep one row per (number, sys_mod_count, sys_updated_at)"
+2016-10,inconsistent_case_spacing,number,222,INC1047177,INC1047177 ,TRIM + UPPER
+2016-10,inconsistent_case_spacing,location,1331,Location 204,Location204,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-10,inconsistent_case_spacing,category,1331,Category 45,Category45,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-10,inconsistent_case_spacing,subcategory,1331,Subcategory 223, subcategory 223 ,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-10,inconsistent_case_spacing,assignment_group,1331,Group 55,GROUP 55,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-10,inconsistent_case_spacing,contact_type,1331,Phone,phone,TRIM + Title case
+2016-10,inconsistent_case_spacing,incident_state,888,Awaiting User Info,AWAITING USER INFO,TRIM + map to standard state name
+2016-10,null_token_variant,location,24,?,NULL,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-10,null_token_variant,category,24,?,?,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-10,null_token_variant,subcategory,49,?,?,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-10,null_token_variant,assignment_group,3640,?,,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-10,null_token_variant,resolved_at,327,?,null,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-10,null_token_variant,u_symptom,6350,?,-,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-10,missing_value,location,177,Location 96,null,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-10,missing_value,category,133,Category  42 ,-,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-10,missing_value,priority,89,3 - Moderate,?,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-10,missing_value,assignment_group,200,Group 23,,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-10,mixed_date_format,opened_at,3550,30/9/2016 14:25,2016-09-30 14:25:00,parse all known formats -> TIMESTAMP
+2016-10,mixed_date_format,sys_updated_at,3550,20/10/2016 13:28,20-Oct-2016 13:28,parse all known formats -> TIMESTAMP
+2016-10,mixed_date_format,resolved_at,3519,13/10/2016 14:31,2016/10/13 14:31,parse all known formats -> TIMESTAMP
+2016-10,mixed_date_format,closed_at,3550,27/10/2016 18:59,2016-10-27 18:59:00,parse all known formats -> TIMESTAMP
+2016-10,invalid_date,sys_updated_at,22,8/10/2016 19:42,0/13/2016 25:61,unparseable event time -> reject row to etl_reject_log
+2016-10,future_date,sys_updated_at,13,16/10/2016 06:25,16/10/2030 06:25,event time after load date -> reject row
+2016-10,inconsistent_code_format,priority,2219,3 - Moderate,3-moderate,map to '<n> - <Name>' using lookup
+2016-10,inconsistent_code_format,impact,2219,2 - Medium,2-medium,map to '<n> - <Name>' using lookup
+2016-10,inconsistent_code_format,urgency,2219,2 - Medium,2-medium,map to '<n> - <Name>' using lookup
+2016-10,inconsistent_boolean,active,4438,TRUE,True,map to BOOLEAN
+2016-10,inconsistent_boolean,made_sla,4438,TRUE,True,map to BOOLEAN
+2016-10,inconsistent_boolean,knowledge,4438,FALSE,No,map to BOOLEAN
+2016-10,inconsistent_boolean,u_priority_confirmation,4438,TRUE,1,map to BOOLEAN
+2016-10,negative_count,reassignment_count,260,2,-2,negative count (sign error) -> ABS()
+2016-10,resolved_before_opened,resolved_at,132,28/9/2016 15:08,1/1/2015 00:00,resolved_at < opened_at -> NULL + flag
+2016-10,numeric_as_text,sys_mod_count,133,6,6.0,cast text -> INT
+2016-10,orphan_code,location,44,Location 204,Location 999,not in location_map -> Unknown member (-1)
+2016-10,orphan_code,category,44,Category 51,Category 88,not in category_map -> Unknown member (-1)
+2016-11,duplicate_row,(all),693,INC1052670,row sent twice,"keep one row per (number, sys_mod_count, sys_updated_at)"
+2016-11,inconsistent_case_spacing,number,235,INC1057296,INC1057296 ,TRIM + UPPER
+2016-11,inconsistent_case_spacing,location,1407,Location 143,Location  143 ,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-11,inconsistent_case_spacing,category,1407,Category 20,CATEGORY 20,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-11,inconsistent_case_spacing,subcategory,1407,Subcategory 174,SUBCATEGORY 174,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-11,inconsistent_case_spacing,assignment_group,1407,Group 54,Group  54 ,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-11,inconsistent_case_spacing,contact_type,1407,Phone,PHONE ,TRIM + Title case
+2016-11,inconsistent_case_spacing,incident_state,938,Awaiting Vendor,AWAITING VENDOR,TRIM + map to standard state name
+2016-11,null_token_variant,location,26,?,null,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-11,null_token_variant,category,24,?,?,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-11,null_token_variant,subcategory,50,?,null,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-11,null_token_variant,assignment_group,3759,?,NULL,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-11,null_token_variant,caller_id,4,?,null,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-11,null_token_variant,resolved_at,346,?,?,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-11,null_token_variant,u_symptom,6808,?,-,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-11,missing_value,location,188,Location 204,null,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-11,missing_value,category,141,Category 45,N/A,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-11,missing_value,priority,94,1 - Critical,-,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-11,missing_value,assignment_group,213,Group 20,null,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-11,mixed_date_format,opened_at,3753,24/10/2016 10:01,2016-10-24 10:01:00,parse all known formats -> TIMESTAMP
+2016-11,mixed_date_format,sys_updated_at,3753,24/11/2016 18:40,24-Nov-2016 18:40,parse all known formats -> TIMESTAMP
+2016-11,mixed_date_format,resolved_at,3721,10/11/2016 11:20,2016/11/10 11:20,parse all known formats -> TIMESTAMP
+2016-11,mixed_date_format,closed_at,3753,8/12/2016 18:59,2016-12-08 18:59:00,parse all known formats -> TIMESTAMP
+2016-11,invalid_date,sys_updated_at,23,30/11/2016 12:40,##/##/####,unparseable event time -> reject row to etl_reject_log
+2016-11,future_date,sys_updated_at,14,10/11/2016 18:59,10/11/2030 18:59,event time after load date -> reject row
+2016-11,inconsistent_code_format,priority,2346,3 - Moderate,P3,map to '<n> - <Name>' using lookup
+2016-11,inconsistent_code_format,impact,2346,2 - Medium,2-medium,map to '<n> - <Name>' using lookup
+2016-11,inconsistent_code_format,urgency,2346,2 - Medium,2-medium,map to '<n> - <Name>' using lookup
+2016-11,inconsistent_boolean,active,4691,TRUE,Yes,map to BOOLEAN
+2016-11,inconsistent_boolean,made_sla,4691,TRUE,Y,map to BOOLEAN
+2016-11,inconsistent_boolean,knowledge,4691,TRUE,Yes,map to BOOLEAN
+2016-11,inconsistent_boolean,u_priority_confirmation,4691,FALSE,false,map to BOOLEAN
+2016-11,negative_count,reassignment_count,278,3,-3,negative count (sign error) -> ABS()
+2016-11,resolved_before_opened,resolved_at,140,15/11/2016 15:13,1/1/2015 00:00,resolved_at < opened_at -> NULL + flag
+2016-11,numeric_as_text,sys_mod_count,141,16,16.0,cast text -> INT
+2016-11,orphan_code,location,47,Location 204,Location 999,not in location_map -> Unknown member (-1)
+2016-11,orphan_code,category,47,Category23,Category 88,not in category_map -> Unknown member (-1)
+2016-12,duplicate_row,(all),753,INC1062443,row sent twice,"keep one row per (number, sys_mod_count, sys_updated_at)"
+2016-12,inconsistent_case_spacing,number,255,INC1058681,inc1058681,TRIM + UPPER
+2016-12,inconsistent_case_spacing,location,1529,Location 43,Location43,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-12,inconsistent_case_spacing,category,1529,Category 53,Category53,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-12,inconsistent_case_spacing,subcategory,1529,Subcategory 164,SUBCATEGORY 164,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-12,inconsistent_case_spacing,assignment_group,1529,Group 70,GROUP 70,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2016-12,inconsistent_case_spacing,contact_type,1529,Phone, Phone,TRIM + Title case
+2016-12,inconsistent_case_spacing,incident_state,1020,Resolved,resolved,TRIM + map to standard state name
+2016-12,null_token_variant,location,28,?,N/A,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-12,null_token_variant,category,28,?,?,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-12,null_token_variant,subcategory,55,?,?,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-12,null_token_variant,assignment_group,4131,?,N/A,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-12,null_token_variant,caller_id,7,?,N/A,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-12,null_token_variant,resolved_at,412,?,null,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-12,null_token_variant,u_symptom,7356,?,null,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2016-12,missing_value,location,204,Location 161,,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-12,missing_value,category,153,Category 26,-,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-12,missing_value,priority,102,3 - Moderate,null,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-12,missing_value,assignment_group,231,Group 70,-,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2016-12,mixed_date_format,opened_at,4078,27/12/2016 09:49,2016-12-27 09:49:00,parse all known formats -> TIMESTAMP
+2016-12,mixed_date_format,sys_updated_at,4078,15/12/2016 08:04,15-Dec-2016 08:04,parse all known formats -> TIMESTAMP
+2016-12,mixed_date_format,resolved_at,4040,14/12/2016 10:25,2016/12/14 10:25,parse all known formats -> TIMESTAMP
+2016-12,mixed_date_format,closed_at,4078,5/1/2017 19:01,2017-01-05 19:01:00,parse all known formats -> TIMESTAMP
+2016-12,invalid_date,sys_updated_at,25,09-Dec-2016 15:09,##/##/####,unparseable event time -> reject row to etl_reject_log
+2016-12,future_date,sys_updated_at,15,21/12/2016 08:49,21/12/2030 08:49,event time after load date -> reject row
+2016-12,inconsistent_code_format,priority,2549,3 - Moderate,Moderate,map to '<n> - <Name>' using lookup
+2016-12,inconsistent_code_format,impact,2549,2 - Medium,MEDIUM,map to '<n> - <Name>' using lookup
+2016-12,inconsistent_code_format,urgency,2549,2 - Medium,2,map to '<n> - <Name>' using lookup
+2016-12,inconsistent_boolean,active,5098,TRUE,True,map to BOOLEAN
+2016-12,inconsistent_boolean,made_sla,5098,TRUE,true,map to BOOLEAN
+2016-12,inconsistent_boolean,knowledge,5098,TRUE,1,map to BOOLEAN
+2016-12,inconsistent_boolean,u_priority_confirmation,5098,TRUE,true,map to BOOLEAN
+2016-12,negative_count,reassignment_count,300,2,-2,negative count (sign error) -> ABS()
+2016-12,resolved_before_opened,resolved_at,151,26/12/2016 15:59,1/1/2015 00:00,resolved_at < opened_at -> NULL + flag
+2016-12,numeric_as_text,sys_mod_count,153,3,3.0,cast text -> INT
+2016-12,orphan_code,location,51,Location 143,Location 999,not in location_map -> Unknown member (-1)
+2016-12,orphan_code,category,51,Category 45,Category 88,not in category_map -> Unknown member (-1)
+2017-01,duplicate_row,(all),704,INC1070746,row sent twice,"keep one row per (number, sys_mod_count, sys_updated_at)"
+2017-01,inconsistent_case_spacing,number,238,INC1069634,inc1069634,TRIM + UPPER
+2017-01,inconsistent_case_spacing,location,1430,Location 143,Location143,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2017-01,inconsistent_case_spacing,category,1430,Category 51,CATEGORY 51,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2017-01,inconsistent_case_spacing,subcategory,1430,Subcategory 114, subcategory 114 ,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2017-01,inconsistent_case_spacing,assignment_group,1430,Group 70,Group  70 ,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2017-01,inconsistent_case_spacing,contact_type,1430,Phone, Phone,TRIM + Title case
+2017-01,inconsistent_case_spacing,incident_state,953,Active,active,TRIM + map to standard state name
+2017-01,null_token_variant,location,27,?,,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2017-01,null_token_variant,category,22,?,,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2017-01,null_token_variant,subcategory,64,?,NULL,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2017-01,null_token_variant,assignment_group,3766,?,,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2017-01,null_token_variant,resolved_at,381,?,?,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2017-01,null_token_variant,u_symptom,6778,?,,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2017-01,missing_value,location,191,Location 93,null,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2017-01,missing_value,category,143,Category 9,NULL,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2017-01,missing_value,priority,95,3 - Moderate,,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2017-01,missing_value,assignment_group,216,NULL,NULL,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2017-01,mixed_date_format,opened_at,3813,20/1/2017 09:19,2017-01-20 09:19:00,parse all known formats -> TIMESTAMP
+2017-01,mixed_date_format,sys_updated_at,3813,6/1/2017 15:29,06-Jan-2017 15:29,parse all known formats -> TIMESTAMP
+2017-01,mixed_date_format,resolved_at,3777,23/1/2017 16:23,2017/01/23 16:23,parse all known formats -> TIMESTAMP
+2017-01,mixed_date_format,closed_at,3813,2/2/2017 19:02,2017-02-02 19:02:00,parse all known formats -> TIMESTAMP
+2017-01,invalid_date,sys_updated_at,24,16/1/2017 13:13,0/13/2016 25:61,unparseable event time -> reject row to etl_reject_log
+2017-01,future_date,sys_updated_at,14,6/1/2017 13:40,6/1/2031 13:40,event time after load date -> reject row
+2017-01,inconsistent_code_format,priority,2383,3 - Moderate,Moderate,map to '<n> - <Name>' using lookup
+2017-01,inconsistent_code_format,impact,2383,2 - Medium,P2,map to '<n> - <Name>' using lookup
+2017-01,inconsistent_code_format,urgency,2383,2 - Medium,2,map to '<n> - <Name>' using lookup
+2017-01,inconsistent_boolean,active,4766,FALSE,N,map to BOOLEAN
+2017-01,inconsistent_boolean,made_sla,4766,TRUE,1,map to BOOLEAN
+2017-01,inconsistent_boolean,knowledge,4766,FALSE,N,map to BOOLEAN
+2017-01,inconsistent_boolean,u_priority_confirmation,4766,FALSE,False,map to BOOLEAN
+2017-01,negative_count,reassignment_count,280,1,-1,negative count (sign error) -> ABS()
+2017-01,resolved_before_opened,resolved_at,142,27/1/2017 19:04,1/1/2015 00:00,resolved_at < opened_at -> NULL + flag
+2017-01,numeric_as_text,sys_mod_count,143,5,5.0,cast text -> INT
+2017-01,orphan_code,location,48,Location 108,Location 999,not in location_map -> Unknown member (-1)
+2017-01,orphan_code,category,48,Category 24,Category 88,not in category_map -> Unknown member (-1)
+2017-02,duplicate_row,(all),659,INC1072849,row sent twice,"keep one row per (number, sys_mod_count, sys_updated_at)"
+2017-02,inconsistent_case_spacing,number,223,INC1076728,inc1076728,TRIM + UPPER
+2017-02,inconsistent_case_spacing,location,1337,Location 34, location 34 ,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2017-02,inconsistent_case_spacing,category,1337,Category 26,Category  26 ,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2017-02,inconsistent_case_spacing,subcategory,1337,Subcategory 223,Subcategory  223 ,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2017-02,inconsistent_case_spacing,assignment_group,1337,Group 25,Group25,"TRIM, collapse spaces, Title case, 'Word n' pattern"
+2017-02,inconsistent_case_spacing,contact_type,1337,Phone, Phone,TRIM + Title case
+2017-02,inconsistent_case_spacing,incident_state,891,New,NEW,TRIM + map to standard state name
+2017-02,null_token_variant,location,15,?,N/A,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2017-02,null_token_variant,category,22,?,?,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2017-02,null_token_variant,subcategory,60,?,NULL,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2017-02,null_token_variant,assignment_group,3656,?,,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2017-02,null_token_variant,caller_id,7,?,-,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2017-02,null_token_variant,resolved_at,332,?,NULL,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2017-02,null_token_variant,u_symptom,6386,?,-,"map '', NULL, N/A, -, ? to NULL -> Unknown member (-1)"
+2017-02,missing_value,location,178,Location 143,N/A,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2017-02,missing_value,category,134,Category 46,,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2017-02,missing_value,priority,89,3 - Moderate,N/A,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2017-02,missing_value,assignment_group,201,Group 20,NULL,NULL -> Unknown member (-1); priority rebuilt from impact x urgency
+2017-02,mixed_date_format,opened_at,3565,31/1/2017 11:19,2017-01-31 11:19:00,parse all known formats -> TIMESTAMP
+2017-02,mixed_date_format,sys_updated_at,3565,23/2/2017 22:54,23-Feb-2017 22:54,parse all known formats -> TIMESTAMP
+2017-02,mixed_date_format,resolved_at,3533,16/2/2017 15:44,2017/02/16 15:44,parse all known formats -> TIMESTAMP
+2017-02,mixed_date_format,closed_at,3565,18/6/2017 12:00,2017-06-18 12:00:00,parse all known formats -> TIMESTAMP
+2017-02,invalid_date,sys_updated_at,22,17/2/2017 20:11,0/13/2016 25:61,unparseable event time -> reject row to etl_reject_log
+2017-02,future_date,sys_updated_at,13,2/2/2017 11:33,2/2/2031 11:33,event time after load date -> reject row
+2017-02,inconsistent_code_format,priority,2228,3 - Moderate,Moderate,map to '<n> - <Name>' using lookup
+2017-02,inconsistent_code_format,impact,2228,2 - Medium,2,map to '<n> - <Name>' using lookup
+2017-02,inconsistent_code_format,urgency,2228,2 - Medium,P2,map to '<n> - <Name>' using lookup
+2017-02,inconsistent_boolean,active,4456,TRUE,Yes,map to BOOLEAN
+2017-02,inconsistent_boolean,made_sla,4456,TRUE,1,map to BOOLEAN
+2017-02,inconsistent_boolean,knowledge,4456,FALSE,False,map to BOOLEAN
+2017-02,inconsistent_boolean,u_priority_confirmation,4456,FALSE,false,map to BOOLEAN
+2017-02,negative_count,reassignment_count,263,2,-2,negative count (sign error) -> ABS()
+2017-02,resolved_before_opened,resolved_at,132,2/3/2017 10:27,1/1/2015 00:00,resolved_at < opened_at -> NULL + flag
+2017-02,numeric_as_text,sys_mod_count,134,4,4.0,cast text -> INT
+2017-02,orphan_code,location,45,Location 204,Location 999,not in location_map -> Unknown member (-1)
+2017-02,orphan_code,category,45,Category 26,Category 88,not in category_map -> Unknown member (-1)

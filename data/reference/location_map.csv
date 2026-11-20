@@ -1,0 +1,150 @@
+location_code,site_name,city,province,region,country
+Location 2,Larkana - Branch Office,Larkana,Sindh,South,Pakistan
+Location 3,Islamabad - Sales Office,Islamabad,Islamabad Capital Territory,North,Pakistan
+Location 5,Karachi - Branch Office 16,Karachi,Sindh,South,Pakistan
+Location 6,Lahore - Branch Office 2,Lahore,Punjab,Central,Pakistan
+Location 8,Rahim Yar Khan - Branch Office,Rahim Yar Khan,Punjab,South Punjab,Pakistan
+Location 9,Gujranwala - Data Center,Gujranwala,Punjab,Central,Pakistan
+Location 10,Lahore - Branch Office 5,Lahore,Punjab,Central,Pakistan
+Location 12,Gwadar - Regional Office,Gwadar,Balochistan,West,Pakistan
+Location 14,Hyderabad - Branch Office,Hyderabad,Sindh,South,Pakistan
+Location 15,Rawalpindi - Regional Office,Rawalpindi,Punjab,North,Pakistan
+Location 17,Karachi - Branch Office 3,Karachi,Sindh,South,Pakistan
+Location 18,Sialkot - Regional Office,Sialkot,Punjab,Central,Pakistan
+Location 21,Dera Ghazi Khan - Regional Office,Dera Ghazi Khan,Punjab,South Punjab,Pakistan
+Location 24,Dera Ghazi Khan - Branch Office,Dera Ghazi Khan,Punjab,South Punjab,Pakistan
+Location 25,Multan - Service Center,Multan,Punjab,South Punjab,Pakistan
+Location 27,Sargodha - Data Center,Sargodha,Punjab,Central,Pakistan
+Location 28,Faisalabad - Warehouse,Faisalabad,Punjab,Central,Pakistan
+Location 33,Rawalpindi - Branch Office,Rawalpindi,Punjab,North,Pakistan
+Location 34,Lahore - Data Center,Lahore,Punjab,Central,Pakistan
+Location 35,Rahim Yar Khan - Head Office,Rahim Yar Khan,Punjab,South Punjab,Pakistan
+Location 36,Lahore - Operations Hub,Lahore,Punjab,Central,Pakistan
+Location 37,Mirpur - Head Office,Mirpur,Azad Jammu & Kashmir,North,Pakistan
+Location 38,Islamabad - Branch Office,Islamabad,Islamabad Capital Territory,North,Pakistan
+Location 39,Lahore - Service Center,Lahore,Punjab,Central,Pakistan
+Location 40,Mardan - Head Office,Mardan,Khyber Pakhtunkhwa,North West,Pakistan
+Location 41,Karachi - Operations Hub,Karachi,Sindh,South,Pakistan
+Location 42,Lahore - Branch Office,Lahore,Punjab,Central,Pakistan
+Location 43,Lahore - Regional Office,Lahore,Punjab,Central,Pakistan
+Location 44,Islamabad - Data Center,Islamabad,Islamabad Capital Territory,North,Pakistan
+Location 45,Karachi - Disaster Recovery Site,Karachi,Sindh,South,Pakistan
+Location 46,Hyderabad - Head Office,Hyderabad,Sindh,South,Pakistan
+Location 47,Peshawar - Regional Office,Peshawar,Khyber Pakhtunkhwa,North West,Pakistan
+Location 51,Rawalpindi - Head Office,Rawalpindi,Punjab,North,Pakistan
+Location 54,Sialkot - Head Office,Sialkot,Punjab,Central,Pakistan
+Location 55,Multan - Head Office,Multan,Punjab,South Punjab,Pakistan
+Location 56,Karachi - Data Center,Karachi,Sindh,South,Pakistan
+Location 59,Faisalabad - Branch Office,Faisalabad,Punjab,Central,Pakistan
+Location 60,Multan - Operations Hub,Multan,Punjab,South Punjab,Pakistan
+Location 64,Quetta - Branch Office,Quetta,Balochistan,West,Pakistan
+Location 66,Mirpur - Branch Office,Mirpur,Azad Jammu & Kashmir,North,Pakistan
+Location 68,Hyderabad - Service Center,Hyderabad,Sindh,South,Pakistan
+Location 69,Quetta - Regional Office,Quetta,Balochistan,West,Pakistan
+Location 70,Karachi - Service Center,Karachi,Sindh,South,Pakistan
+Location 71,Faisalabad - Regional Office,Faisalabad,Punjab,Central,Pakistan
+Location 72,Peshawar - Warehouse,Peshawar,Khyber Pakhtunkhwa,North West,Pakistan
+Location 75,Sialkot - Data Center,Sialkot,Punjab,Central,Pakistan
+Location 76,Faisalabad - Operations Hub,Faisalabad,Punjab,Central,Pakistan
+Location 77,Lahore - Branch Office 3,Lahore,Punjab,Central,Pakistan
+Location 78,Karachi - Branch Office 4,Karachi,Sindh,South,Pakistan
+Location 79,Peshawar - Service Center,Peshawar,Khyber Pakhtunkhwa,North West,Pakistan
+Location 81,Abbottabad - Regional Office,Abbottabad,Khyber Pakhtunkhwa,North West,Pakistan
+Location 82,Dera Ghazi Khan - Head Office,Dera Ghazi Khan,Punjab,South Punjab,Pakistan
+Location 83,Karachi - Warehouse,Karachi,Sindh,South,Pakistan
+Location 85,Islamabad - Service Center,Islamabad,Islamabad Capital Territory,North,Pakistan
+Location 86,Karachi - Sales Office,Karachi,Sindh,South,Pakistan
+Location 90,Islamabad - Disaster Recovery Site,Islamabad,Islamabad Capital Territory,North,Pakistan
+Location 91,Larkana - Head Office,Larkana,Sindh,South,Pakistan
+Location 92,Multan - Training Campus,Multan,Punjab,South Punjab,Pakistan
+Location 93,Karachi - Regional Office,Karachi,Sindh,South,Pakistan
+Location 96,Peshawar - Head Office,Peshawar,Khyber Pakhtunkhwa,North West,Pakistan
+Location 97,Sahiwal - Head Office,Sahiwal,Punjab,Central,Pakistan
+Location 98,Mardan - Branch Office,Mardan,Khyber Pakhtunkhwa,North West,Pakistan
+Location 99,Faisalabad - Data Center,Faisalabad,Punjab,Central,Pakistan
+Location 100,Islamabad - Support Desk,Islamabad,Islamabad Capital Territory,North,Pakistan
+Location 101,Rawalpindi - Call Center,Rawalpindi,Punjab,North,Pakistan
+Location 107,Peshawar - Data Center,Peshawar,Khyber Pakhtunkhwa,North West,Pakistan
+Location 108,Faisalabad - Head Office,Faisalabad,Punjab,Central,Pakistan
+Location 109,Gilgit - Regional Office,Gilgit,Gilgit-Baltistan,North,Pakistan
+Location 110,Rawalpindi - Operations Hub,Rawalpindi,Punjab,North,Pakistan
+Location 111,Karachi - Branch Office,Karachi,Sindh,South,Pakistan
+Location 112,Sahiwal - Regional Office,Sahiwal,Punjab,Central,Pakistan
+Location 113,Gwadar - Head Office,Gwadar,Balochistan,West,Pakistan
+Location 114,Peshawar - Training Campus,Peshawar,Khyber Pakhtunkhwa,North West,Pakistan
+Location 115,Peshawar - Operations Hub,Peshawar,Khyber Pakhtunkhwa,North West,Pakistan
+Location 117,Bahawalpur - Regional Office,Bahawalpur,Punjab,South Punjab,Pakistan
+Location 118,Sargodha - Regional Office,Sargodha,Punjab,Central,Pakistan
+Location 124,Karachi - Training Campus,Karachi,Sindh,South,Pakistan
+Location 125,Gujranwala - Head Office,Gujranwala,Punjab,Central,Pakistan
+Location 128,Sukkur - Head Office,Sukkur,Sindh,South,Pakistan
+Location 131,Multan - Branch Office,Multan,Punjab,South Punjab,Pakistan
+Location 133,Sialkot - Branch Office,Sialkot,Punjab,Central,Pakistan
+Location 134,Lahore - Branch Office 4,Lahore,Punjab,Central,Pakistan
+Location 135,Quetta - Head Office,Quetta,Balochistan,West,Pakistan
+Location 136,Bahawalpur - Head Office,Bahawalpur,Punjab,South Punjab,Pakistan
+Location 138,Faisalabad - Training Campus,Faisalabad,Punjab,Central,Pakistan
+Location 140,Rawalpindi - Training Campus,Rawalpindi,Punjab,North,Pakistan
+Location 141,Faisalabad - Call Center,Faisalabad,Punjab,Central,Pakistan
+Location 142,Mirpur - Regional Office,Mirpur,Azad Jammu & Kashmir,North,Pakistan
+Location 143,Lahore - Head Office,Lahore,Punjab,Central,Pakistan
+Location 153,Gwadar - Branch Office,Gwadar,Balochistan,West,Pakistan
+Location 158,Karachi - Branch Office 5,Karachi,Sindh,South,Pakistan
+Location 160,Faisalabad - Service Center,Faisalabad,Punjab,Central,Pakistan
+Location 161,Islamabad - Head Office,Islamabad,Islamabad Capital Territory,North,Pakistan
+Location 162,Sukkur - Regional Office,Sukkur,Sindh,South,Pakistan
+Location 165,Muzaffarabad - Head Office,Muzaffarabad,Azad Jammu & Kashmir,North,Pakistan
+Location 168,Karachi - Support Desk,Karachi,Sindh,South,Pakistan
+Location 169,Lahore - Sales Office,Lahore,Punjab,Central,Pakistan
+Location 170,Muzaffarabad - Regional Office,Muzaffarabad,Azad Jammu & Kashmir,North,Pakistan
+Location 171,Lahore - Disaster Recovery Site,Lahore,Punjab,Central,Pakistan
+Location 172,Quetta - Data Center,Quetta,Balochistan,West,Pakistan
+Location 173,Peshawar - Branch Office,Peshawar,Khyber Pakhtunkhwa,North West,Pakistan
+Location 174,Sargodha - Branch Office,Sargodha,Punjab,Central,Pakistan
+Location 177,Rawalpindi - Service Center,Rawalpindi,Punjab,North,Pakistan
+Location 179,Islamabad - Regional Office,Islamabad,Islamabad Capital Territory,North,Pakistan
+Location 182,Sahiwal - Branch Office,Sahiwal,Punjab,Central,Pakistan
+Location 187,Larkana - Regional Office,Larkana,Sindh,South,Pakistan
+Location 190,Gujranwala - Service Center,Gujranwala,Punjab,Central,Pakistan
+Location 193,Quetta - Service Center,Quetta,Balochistan,West,Pakistan
+Location 194,Islamabad - Branch Office 2,Islamabad,Islamabad Capital Territory,North,Pakistan
+Location 195,Islamabad - Call Center,Islamabad,Islamabad Capital Territory,North,Pakistan
+Location 196,Gujranwala - Branch Office,Gujranwala,Punjab,Central,Pakistan
+Location 197,Multan - Regional Office,Multan,Punjab,South Punjab,Pakistan
+Location 199,Jhelum - Head Office,Jhelum,Punjab,North,Pakistan
+Location 201,Karachi - Branch Office 17,Karachi,Sindh,South,Pakistan
+Location 203,Sialkot - Service Center,Sialkot,Punjab,Central,Pakistan
+Location 204,Karachi - Head Office,Karachi,Sindh,South,Pakistan
+Location 205,Islamabad - Training Campus,Islamabad,Islamabad Capital Territory,North,Pakistan
+Location 207,Islamabad - Branch Office 3,Islamabad,Islamabad Capital Territory,North,Pakistan
+Location 208,Bahawalpur - Branch Office,Bahawalpur,Punjab,South Punjab,Pakistan
+Location 209,Gilgit - Head Office,Gilgit,Gilgit-Baltistan,North,Pakistan
+Location 210,Gujranwala - Regional Office,Gujranwala,Punjab,Central,Pakistan
+Location 211,Karachi - Branch Office 18,Karachi,Sindh,South,Pakistan
+Location 212,Abbottabad - Branch Office,Abbottabad,Khyber Pakhtunkhwa,North West,Pakistan
+Location 213,Islamabad - Warehouse,Islamabad,Islamabad Capital Territory,North,Pakistan
+Location 214,Sukkur - Data Center,Sukkur,Sindh,South,Pakistan
+Location 216,Jhelum - Regional Office,Jhelum,Punjab,North,Pakistan
+Location 218,Abbottabad - Data Center,Abbottabad,Khyber Pakhtunkhwa,North West,Pakistan
+Location 220,Multan - Warehouse,Multan,Punjab,South Punjab,Pakistan
+Location 221,Lahore - Support Desk,Lahore,Punjab,Central,Pakistan
+Location 222,Sukkur - Branch Office,Sukkur,Sindh,South,Pakistan
+Location 223,Islamabad - Operations Hub,Islamabad,Islamabad Capital Territory,North,Pakistan
+Location 224,Multan - Data Center,Multan,Punjab,South Punjab,Pakistan
+Location 225,Gilgit - Branch Office,Gilgit,Gilgit-Baltistan,North,Pakistan
+Location 226,Muzaffarabad - Branch Office,Muzaffarabad,Azad Jammu & Kashmir,North,Pakistan
+Location 228,Rawalpindi - Warehouse,Rawalpindi,Punjab,North,Pakistan
+Location 229,Sargodha - Head Office,Sargodha,Punjab,Central,Pakistan
+Location 231,Lahore - Training Campus,Lahore,Punjab,Central,Pakistan
+Location 232,Hyderabad - Regional Office,Hyderabad,Sindh,South,Pakistan
+Location 233,Jhelum - Branch Office,Jhelum,Punjab,North,Pakistan
+Location 234,Hyderabad - Data Center,Hyderabad,Sindh,South,Pakistan
+Location 235,Karachi - Branch Office 2,Karachi,Sindh,South,Pakistan
+Location 236,Lahore - Warehouse,Lahore,Punjab,Central,Pakistan
+Location 237,Bahawalpur - Data Center,Bahawalpur,Punjab,South Punjab,Pakistan
+Location 240,Rahim Yar Khan - Regional Office,Rahim Yar Khan,Punjab,South Punjab,Pakistan
+Location 241,Lahore - Call Center,Lahore,Punjab,Central,Pakistan
+Location 242,Karachi - Call Center,Karachi,Sindh,South,Pakistan
+Location 245,Abbottabad - Head Office,Abbottabad,Khyber Pakhtunkhwa,North West,Pakistan
+Location 247,Mardan - Regional Office,Mardan,Khyber Pakhtunkhwa,North West,Pakistan
+Location 249,Rawalpindi - Data Center,Rawalpindi,Punjab,North,Pakistan
